@@ -52,3 +52,27 @@ let menu_items = document.querySelectorAll('a')
 
  let button_text = document.querySelector('button');
  button_text.innerHTML = siteContent['cta']['button'];
+
+ let h4_elements = document.querySelectorAll('h4');
+
+ let p_elements = document.querySelectorAll('p')
+ 
+ h4_elements[0].innerHTML = siteContent['main-content']['features-h4']
+ p_elements[0].innerHTML = siteContent['main-content']['features-content']
+
+ h4_elements[1].innerHTML = siteContent['main-content']['about-h4']
+ p_elements[1].innerHTML = siteContent['main-content']['about-content']
+
+let middle_img = document.getElementById('middle-img')
+middle_img.setAttribute('src' , siteContent['main-content']['middle-img-src'])
+
+ h4_elements[2].innerHTML = siteContent['main-content']['services-h4']
+ p_elements[2].innerHTML = siteContent['main-content']['services-content']
+
+ h4_elements[3].innerHTML = siteContent['main-content']['product-h4']
+ p_elements[3].innerHTML = siteContent['main-content']['product-content']
+
+ h4_elements[4].innerHTML = siteContent['main-content']['vision-h4']
+ p_elements[4].innerHTML = siteContent['main-content']['vision-content']
+
+ 
