@@ -42,7 +42,10 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 let menu_items = document.querySelectorAll('a')
- menu_items.forEach((element, index)=>{element.innerHTML = siteContent['nav'][`nav-item-${index+1}`]})
+ menu_items.forEach((element, index)=>{
+   element.innerHTML = siteContent['nav'][`nav-item-${index+1}`]
+   element.style.color = 'green'
+  })
 
  let h1_selector = document.querySelector('h1');
  h1_selector.innerHTML = siteContent['cta']['h1'];
@@ -56,15 +59,27 @@ let menu_items = document.querySelectorAll('a')
  let h4_elements = document.querySelectorAll('h4');
 
  let p_elements = document.querySelectorAll('p')
- 
+
+ let my_source_array = Object.entries(siteContent["main-content"]);
+
+//  for (let j = 0; j < my_source_array.length ; j++) {
+//   for (let i = 0; i < my_source_array.length ; i++) {
+//       if (my_source_array[i][0].substring(my_source_array[i][0].length - 3) === "-h4") {
+//         h4_elements[i].innerHTML = my_source_array[i][1];
+//     } else {
+//       p_elements[i].innerHTML = my_source_array[i][1];
+//     }
+//  }
+// }  
+
  h4_elements[0].innerHTML = siteContent['main-content']['features-h4']
  p_elements[0].innerHTML = siteContent['main-content']['features-content']
 
  h4_elements[1].innerHTML = siteContent['main-content']['about-h4']
  p_elements[1].innerHTML = siteContent['main-content']['about-content']
 
-let middle_img = document.getElementById('middle-img')
-middle_img.setAttribute('src' , siteContent['main-content']['middle-img-src'])
+ let middle_img = document.getElementById('middle-img')
+ middle_img.setAttribute('src' , siteContent['main-content']['middle-img-src'])
 
  h4_elements[2].innerHTML = siteContent['main-content']['services-h4']
  p_elements[2].innerHTML = siteContent['main-content']['services-content']
@@ -75,4 +90,34 @@ middle_img.setAttribute('src' , siteContent['main-content']['middle-img-src'])
  h4_elements[4].innerHTML = siteContent['main-content']['vision-h4']
  p_elements[4].innerHTML = siteContent['main-content']['vision-content']
 
- 
+const contact_header = document.querySelector('.contact h4');
+
+
+contact_header.innerHTML = siteContent["contact"]["contact-h4"];
+
+
+
+p_elements[5].innerHTML = siteContent['contact']['address']
+
+
+p_elements[6].innerHTML = siteContent['contact']['phone']
+
+
+p_elements[7].innerHTML = siteContent['contact']['email']
+
+const copyright = document.querySelector('footer')
+
+copyright.innerHTML = siteContent['footer']['copyright'];
+
+//.apend
+const add_item = document.querySelector('nav')
+const a_element = document.createElement('a')
+a_element.innerHTML = 'Protfolio'
+add_item.append(a_element)
+a_element.style.color = 'green'
+
+//.prepend
+const pre_a = document.createElement('a')
+pre_a.innerHTML = 'Clients'
+add_item.prepend(pre_a);
+pre_a.style.color = 'green'
